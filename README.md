@@ -14,7 +14,7 @@ Name (pending): BossmanDKP
 ### Configuration
 
 * Check out this code on the server you wish to run the bot on.  
-* Configure your MySQL server, and set the `sequelize` config in config/config.json. (Fill in the blanks below)
+* Configure your MySQL server, and set the `sequelize` config in config/config.json. (Fill in the blanks below, the AMI has this pre-configured)
 ```
 {
   "development": {
