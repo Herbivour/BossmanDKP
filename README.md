@@ -8,6 +8,29 @@ Join the discord chat [here](https://discord.gg/43xNuMe).
 I have submitted an AMI to the Amazon Marketplace.  The readme will be updated when I check back and see if it is approved/denied.
 Name (pending): BossmanDKP
 
+To launch the AMI:
+* Log in to your Amazon Web Services account
+* Navigate to the `EC2` product
+* Select `Instances` from the left menu
+* Click `Launch Instance` from the top bar.
+* Search for `BossmanDKP`
+* Select `Community AMIs` from the left menu.
+* Select the version of BossmanDKP you wish to run (current version: `BossmanDKP-2020.7.4`)
+* I suggest using a `t3a.micro` instance. `t2.micro` should work as well, and will be "free" for the first year of your amazon web services account.
+* Click `Review and Launch`
+* Click `Launch`
+* Select your SSH Keys (used to connect to the server)
+* View the running instances
+* Edit the security group (Click the instance name, in the bottom pane find `Security groups` and click the link to the security group)
+* Select `Inbound rules`
+* `Edit inbound rules`
+* `Add rule` - Add `HTTP` and enter `0.0.0.0/0` in the input field next to the dropdown that says `Custom`
+* `Save rules`
+* You will no be able to navigate to the IP address listed on the Instances page.
+
+The instance is now running, and accessable.  You will need to connect to the instance and configure the Discord Bot's environment variables.  To do this SSH in (AWS has instructions on the instance page under `Actions` => `Connect`). Once you are connected you can edit `~/.bashrc` via `nano ~/.bashrc`. Scroll to the bottom of the file and fill in the environment variables.  Once this has been completed you can run `forever restartall` to restart the web server and the discord bot.
+
+
 ### Requirements
 
 * mysql server
