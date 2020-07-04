@@ -28,7 +28,7 @@ To launch the AMI:
 * `Save rules`
 * You will no be able to navigate to the IP address listed on the Instances page.
 
-The instance is now running, and accessable.  You will need to connect to the instance and configure the Discord Bot's environment variables.  To do this SSH in (AWS has instructions on the instance page under `Actions` => `Connect`). Once you are connected you can edit `~/.bashrc` via `nano ~/.bashrc`. Scroll to the bottom of the file and fill in the environment variables.  Once this has been completed you can run `forever restartall` to restart the web server and the discord bot.
+The instance is now running, and accessable.  You will need to connect to the instance and configure the Discord Bot's environment variables.  To do this SSH in (AWS has instructions on the instance page under `Actions` => `Connect`). Once you are connected you can edit `~/.bashrc` via `nano ~/.bashrc`. Scroll to the bottom of the file and fill in the environment variables.  Once this has been completed you can run `forever restartall` to restart the web server and the discord bot.  It is highly suggested that you assign an elastic IP to your Instance.  This will prevent the instance from changing it's IP if you ever choose to shutdown/reboot.  To do this allocate and assign an IP address in the `Networking & Security` => `Elastic IPs section of the EC2 console.
 
 
 ### Requirements
