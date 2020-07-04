@@ -35,6 +35,11 @@ A Discord bot designed for DKP with everquest.  It has a read-only website for m
 * DKP_BID_CHAN - The channel where auctions happen
 * DKP_REPORTING_CHANNEL - The channel where everyone's bids are posted, this is useful for fixing error bids.
 * BOSSMAN_ONWER_ID - Your discord ID, this is used to protect some commands that only the server admin should have access to.
+* POLLY_AWS_REGION - The AWS Region used when generating TTS with AWS Poly
+Amazon Web Services config (Documentation: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+* AWS_ACCESS_KEY_ID 
+* AWS_SECRET_ACCESS_KEY
+* AWS_DEFAULT_REGION
 
 ### Docker 
 Use Adminer to create your db.
