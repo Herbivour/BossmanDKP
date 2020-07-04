@@ -1,0 +1,16 @@
+.envrc
+config/*
+!config/.gitkeep
+node_modules
+*.sqlite3
+content/articles/*.html
+content/articles/*.txt
+content/assets/*.JPG
+content/assets/*.PNG
+content/assets/*.jpg
+content/assets/*.png
+*.mp3
+audio/*
+!audio/.gitkeep
+logs/*
+!logs/.gitkeep
