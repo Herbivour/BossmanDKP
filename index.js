@@ -12,6 +12,10 @@ hbs.registerHelper('isChecked', function(attr, obj) {
   }
   return '';
 });
+global.guildName = process.env.GUILD_NAME
+hbs.registerHelper('guildName', () => {
+  return guildName;
+})
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 

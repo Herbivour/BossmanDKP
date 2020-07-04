@@ -95,6 +95,7 @@ Bossman now has permissions to access the AWS Polly service.
 
 ### Environment Variables
 
+* GUILD_NAME - The guild name that is displayed on the web ui
 * DISCORD_TOKEN - The Bot's token.  This can be found on the bot page from Discord's website
 * BOSSMAN_API_KEY - An API key that will be used by the bossman asstant client (Comming soon)
 * DKP_BID_CHAN - The channel where auctions happen
