@@ -1,0 +1,62 @@
+version: '3'
+
+services:
+  python:
+    container_name: BossmanDKP_python
+    image: python:3.6.1-alpine
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nodejs
+    container_name: BossmanDKP
+    restart: unless-stopped
+    depends_on:
+      - db
+      - python
+    environment:
+      - DEBUG=1
+
+  discordbot:
+    build:
+      context: .
+      dockerfile: discord/Dockerfile
+    image: nodejs
+    container_name: BossmanDKP_discord
+    restart: unless-stopped
+    depends_on:
+      - db
+      - python
+    env_file:
+    - ./config/discord.env
+
+  webserver:
+    image: nginx:mainline-alpine
+    container_name: BossmanDKPWeb
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx-conf:/etc/nginx/conf.d
+    depends_on:
+      - db
+
+
+volumes:
+  mysql-data:

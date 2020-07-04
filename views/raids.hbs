@@ -1,0 +1,33 @@
+{{#if prevPage}}
+  <a href="/raids?p={{prevPage}}">&lt;</a>
+{{/if}}
+{{#if nextPage}}
+  <a href="/raids?p={{nextPage}}" class="float-right">></a>
+{{/if}}
+<table class="table table-striped table-sm">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Note</th>
+      <th scope="col">Points</th>
+      <th scope="col">RA?</th>
+      <th scope="col">ID</th>
+    </tr>
+  </thead>
+  {{#each raids}}
+  <tr>
+    <td><a href="/raids/{{this.id}}">{{formatDate this.when}}</a></td>
+    <td><a href="/raids/{{this.id}}">{{this.note}}</a></td>
+    <td><a href="/raids/{{this.id}}">{{this.value}}</a></td>
+    <td><a href="/raids/{{this.id}}">{{this.isAttendance}}</a></td>
+    <td><a href="/raids/{{this.id}}">{{this.id}}</a></td>
+  </tr>
+  {{/each}}
+</table>
+
+{{#if prevPage}}
+  <a href="/raids?p={{prevPage}}">&lt;</a>
+{{/if}}
+{{#if nextPage}}
+  <a href="/raids?p={{nextPage}}" class="float-right">></a>
+{{/if}}

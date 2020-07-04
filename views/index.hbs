@@ -1,0 +1,9 @@
+<h1>News:</h1>
+{{#each articles}}
+<div class="row border border-light rounded-lg mb-4 shadow-lg articles-page">
+  <div class="col-12">
+  {{{this.html}}}
+  <p><span class="float-right text-light">ID: {{this.timestamp}}</span></p>
+  </div>
+</div>
+{{/each}}

@@ -1,0 +1,16 @@
+    <h3>{{item.name}}</h3>
+    <h4>Purchases</h4>
+    <table class="table table-striped table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Cost</th>
+      </tr>
+    </thead>
+  {{#each item.purchases}}
+  <tr>
+    <td><a href="/roster/{{this.UserId}}">{{this.User.characterName}}</a></td>
+    <td>{{this.value}}</td>
+  </tr>
+  {{/each}}
+    
