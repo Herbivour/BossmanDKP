@@ -1,6 +1,14 @@
 # Bossman DKP
 A Discord bot designed for DKP with everquest.  It has a read-only website for members.  All actions are done through the bot in discord.  `DKP Officer` rank members will be able to perform any dkp actions.  Members will be able to bid and check dkp standings via messaging to the bot. Bossman can join a Discord voice channel (if they have discord rights to), and will use TTS to announce bidding and winners.  This uses AWS Po;ly (https://aws.amazon.com/polly/) to generate the audio.  If you would like to have a sound played when dumps are taken place a wav file in `audio/register.wav`.  We use a cash register cha-ching sound.
 
+### Updating
+
+To update the server to a newer version of code connect to your server, and `cd` into the install folder. (/var/BossmanDKP for the AMI).
+This is a Git Repository, so we can use standard git commands.  
+If you are using the normal version you will be able to run the following commands to update:
+* `git pull`
+* `forever restartall`
+
 ### Discord
 Join the discord chat [here](https://discord.gg/43xNuMe).
 
