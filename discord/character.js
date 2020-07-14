@@ -234,7 +234,7 @@ const listQueryArgs = {
         'Ranger',
         'Rogue',
         'Beastlord',
-        'Berzerker'
+        'Berserker'
       ]
     }
   },
@@ -255,7 +255,7 @@ const listQueryArgs = {
         'Ranger',
         'Rogue',
         'Shaman',
-        'Berzerker'
+        'Berserker'
       ]
     }
   },
