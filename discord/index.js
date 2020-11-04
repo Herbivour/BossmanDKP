@@ -736,6 +736,7 @@ messageHandlers.cancel = async function(msg) {
   }
   delete openBids[itemName];
   msg.reply(`I have canceled bidding for ${itemName}.`);
+  tryTTS(`The auction for ${itemName} has been canceled.`);
 };
 messageHandlers.speak = async function(msg) {
   if(!msg.member.roles.cache.find(r => r.name === "DKP Officer")) {
