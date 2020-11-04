@@ -5,14 +5,15 @@ var polly = new AWS.Polly({
 });
 
 const handlers = {};
-
+const VoiceId = process.env.POLY_VOICE || "Kendra";
+console.log('!!!!! using voice id:', VoiceId)
 async function GenerateMp3(text, fileLocation) {
   const params = {
     OutputFormat: "mp3", 
     SampleRate: "24000", 
     Text: text, 
     TextType: "text", 
-    VoiceId: "Kendra",
+    VoiceId,
     Engine: "neural"
   };
   const data = await polly.synthesizeSpeech(params).promise();

@@ -2,7 +2,7 @@ const fs = require('fs');
 const crypto = require('crypto');
 const Polly = require('./aws_polly');
 const handlers = {};
-
+const VoiceId = process.env.POLY_VOICE || "Kendra";
 let voiceConnection;
 function SetConnection(connection) {
   voiceConnection = connection;
@@ -33,7 +33,7 @@ async function Speak(text) {
     return;
   }
   hash.update(lText);
-  const filename = __dirname + '/../../audio/' + hash.digest('hex') + '.mp3';
+  const filename = __dirname + '/../../audio/' + VoiceId + hash.digest('hex') + '.mp3';
   if (!fs.existsSync(filename)) {
     await Polly.GenerateMp3(lText, filename);
   }

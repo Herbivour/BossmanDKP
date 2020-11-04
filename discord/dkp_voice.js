@@ -78,6 +78,9 @@ async function attendance(msg) {
 }
 
 async function usage(msg) {
+console.log("usage")
+console.log("author id: ", msg.author.id)
+console.log("Owner ID: ", botOwnerId)
   if(msg.author.id !== botOwnerId) {
     msg.reply('Sorry, only Herbivour can do this action');
     return;

@@ -114,7 +114,7 @@ Amazon Web Services config (Documentation: https://docs.aws.amazon.com/cli/lates
 * AWS_ACCESS_KEY_ID 
 * AWS_SECRET_ACCESS_KEY
 * AWS_DEFAULT_REGION
-
+* POLY_VOICE - AWS poly voice to use
 ### Docker 
 Use Adminer to create your db.
 Configure the DB connection info in `config/config.json`

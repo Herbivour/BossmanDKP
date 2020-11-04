@@ -7,11 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "node ./scripts/migrate.js",
     "start-web": "forever start index.js -l ./logs/web.log",
-    "start-bot": "forever start discord/index.js -l ./logs/bot.log",
+    "start-bot": "DISCORD_TOKEN=$DISCORD_TOKEN_1 && forever start discord/index.js -l ./logs/bot.log",
+    "start-bot-2": "DISCORD_TOKEN=$DISCORD_TOKEN_2 && POLY_VOICE=Matthew forever start discord/index.js -l ./logs/bot-2.log",
     "stop-web": "forever stop index.js",
-    "stop-bot": "forever stop discord/index.js",
-    "start-all": "npm run start-web && npm run start-bot",
-    "stop-all": "npm run stop-web && npm run stop-bot"
+    "stop-bot": "DISCORD_TOKEN=$DISCORD_TOKEN_1 && forever stop discord/index.js",
+    "stop-bot-2": "DISCORD_TOKEN=$DISCORD_TOKEN_2 && forever stop discord/index.js",
+    "start-all": "npm run start-web && npm run start-bot && npm run start-bot-2",
+    "stop-all": "npm run stop-web && npm run stop-bot && npm run stop-bot-2"
   },
   "author": "",
   "license": "ISC",
