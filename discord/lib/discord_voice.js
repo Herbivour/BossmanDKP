@@ -26,7 +26,7 @@ const audioRemap = require('./audio_remap.json');
 console.log(audioRemap);
 async function Speak(text) {
   const hash = crypto.createHash('sha256');
-  const lText = text.toLowerCase();
+  let lText = text.toLowerCase();
   lText = lText.replace('mylos', 'apples')
   if (audioRemap[lText]) {
     console.log(__dirname + '/../../audio/' + audioRemap[lText]);
